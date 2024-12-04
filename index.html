@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Felipe Franco de Camargo // CT1009592" />
+    <meta name="description" content="Final Exame for IST103 - Website Development @ CCTB" />
+
+    <!-- Scripts, tailwind and jsVille main js -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="index.js"></script>
+
+    <!-- Poppins Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
+    </style>
+    <title>Final Exam JsVille</title>
+  </head>
+  <body class="container mx-auto flex flex-col gap-4 items-center justify-center bg-slate-100">
+    <h1 class="text-xl font-bold">Welcome to JSville Courier Management System!</h1>
+    <h3 class="font-semibold text-lg">Enter package details below:</h3>
+    <form
+      id="package_form"
+      action="#"
+      class="flex flex-col items-center justify-center flex-1 md:flex-row flex-warp gap-2 px-4 py-2 w-full">
+      <div class="flex flex-col gap-1">
+        <label for="recipient_name" class="font-bold text-emerald-500">Recipient Name</label>
+        <input id="recipient_name" type="text" class="border rounded-md" />
+        <span id="recipient_name_error" class="hidden text-red-400 font-bold text-sm">Only letters allowed</span>
+      </div>
+
+      <div class="flex flex-col gap-1">
+        <label for="package_id" class="font-bold text-emerald-500">Package ID</label>
+        <input type="number" min="1" id="package_id" class="border rounded-md" />
+        <span id="package_id_error" class="hidden text-red-400 font-bold text-sm">Only numbers allowred</span>
+      </div>
+
+      <div class="flex flex-col gap-1">
+        <label for="delivery_address" class="font-bold text-emerald-500">Delivery Address</label>
+        <input id="delivery_address" type="text" class="border rounded-md" />
+        <span id="delivery_address_erro" class="hidden text-red-400 font-bold text-sm">Only letters allowed</span>
+      </div>
+
+      <div class="flex flex-col gap-1">
+        <label for="weight" class="font-bold text-emerald-500">Weight</label>
+        <input type="number" min="1" id="weight" class="border rounded-md" />
+        <span id="weight_erro" class="hidden text-red-400 font-bold text-sm">Only number allowed</span>
+      </div>
+
+      <input
+        type="submit"
+        value="Submit"
+        class="px-4 py-2 bg-emerald-600 text-white rounded-xl hover:bg-emerald-600/80" />
+    </form>
+
+    <div id="succes_package" class="hidden px-4 py-2">
+      <h3 class="font-semibold text-lg">Package Details</h3>
+      <div id="package_details" class="flex flex-col gap-2 px-4 py-2">
+        <p>Package added successfully!</p>
+        <p id="tracking_code">Tracking Code:</p>
+      </div>
+    </div>
+
+    <div id="package_table" class="hidden flex flex-col gap-4 px-4 py-2">
+      <h3 class="font-semibold text-lg">Package Table</h3>
+      <table class="border border-slate-200">
+        <thead class="border-b">
+          <tr>
+            <th class="border-gray-300 px-4 py-2">Recipient Name</th>
+            <th class="border-gray-300 px-4 py-2">Package ID</th>
+            <th class="border-gray-300 px-4 py-2">Delivery Address</th>
+            <th class="border-gray-300 px-4 py-2">Weight</th>
+            <th class="border-gray-300 px-4 py-2">Tracking Code</th>
+          </tr>
+        </thead>
+        <tbody id="package_table_body"></tbody>
+      </table>
+    </div>
+  </body>
+</html>
